@@ -1,0 +1,268 @@
+[0.000000] (-) TimerEvent: {}
+[0.000075] (arm_motion_control) JobQueued: {'identifier': 'arm_motion_control', 'dependencies': OrderedDict({'arm_motion_control': '/path/to/ros2-cpp-motion-control/install/arm_motion_control'})}
+[0.000129] (arm_motion_control) JobStarted: {'identifier': 'arm_motion_control'}
+[0.026137] (arm_motion_control) Command: {'cmd': ['/path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/ctest', '-C', 'Release', '-D', 'ExperimentalTest', '--no-compress-output', '-V', '--force-new-ctest-process'], 'cwd': '/path/to/ros2-cpp-motion-control/build/arm_motion_control', 'env': '<process environment removed>', 'shell': False}
+[0.032977] (arm_motion_control) StdoutLine: {'line': b'SetCTestConfiguration:BuildDirectory:/path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[0.033538] (arm_motion_control) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/path/to/ros2-cpp-motion-control/build/arm_motion_control/CTestConfiguration.ini\n'}
+[0.033856] (arm_motion_control) StdoutLine: {'line': b'Parse Config file:/path/to/ros2-cpp-motion-control/build/arm_motion_control/CTestConfiguration.ini\n'}
+[0.033990] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_SITE:kira\n'}
+[0.034286] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_SOURCE_DIRECTORY:/path/to/ros2-cpp-motion-control\n'}
+[0.034553] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_BINARY_DIRECTORY:/path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[0.034690] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_CONFIGURE_COMMAND:"/path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/cmake" "/path/to/ros2-cpp-motion-control"\n'}
+[0.034807] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_TEST_TIMEOUT:10000000\n'}
+[0.034950] (arm_motion_control) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/path/to/ros2-cpp-motion-control/build/arm_motion_control/CTestConfiguration.ini\n'}
+[0.035059] (arm_motion_control) StdoutLine: {'line': b'Parse Config file:/path/to/ros2-cpp-motion-control/build/arm_motion_control/CTestConfiguration.ini\n'}
+[0.035169] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_SITE:kira\n'}
+[0.035275] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_SOURCE_DIRECTORY:/path/to/ros2-cpp-motion-control\n'}
+[0.035381] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_BINARY_DIRECTORY:/path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[0.035484] (arm_motion_control) StdoutLine: {'line': b'SetCMakeVariable:CTEST_CONFIGURE_COMMAND:"/path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/cmake" "/path/to/ros2-cpp-motion-control"\n'}
+[0.035751] (arm_motion_control) StdoutLine: {'line': b'SetCTestConfiguration:BuildDirectory:/path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[0.035902] (arm_motion_control) StdoutLine: {'line': b'SetCTestConfiguration:SourceDirectory:/path/to/ros2-cpp-motion-control\n'}
+[0.036014] (arm_motion_control) StdoutLine: {'line': b'Test project /path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[0.036125] (arm_motion_control) StdoutLine: {'line': b'Constructing a list of tests\n'}
+[0.036235] (arm_motion_control) StdoutLine: {'line': b'Done constructing a list of tests\n'}
+[0.036349] (arm_motion_control) StdoutLine: {'line': b'Updating test list for fixtures\n'}
+[0.036458] (arm_motion_control) StdoutLine: {'line': b'Added 0 tests to meet fixture requirements\n'}
+[0.036567] (arm_motion_control) StdoutLine: {'line': b'Checking test dependency graph...\n'}
+[0.036707] (arm_motion_control) StdoutLine: {'line': b'Checking test dependency graph end\n'}
+[0.036827] (arm_motion_control) StdoutLine: {'line': b'test 1\n'}
+[0.036937] (arm_motion_control) StdoutLine: {'line': b'    Start 1: test_trajectory\n'}
+[0.037051] (arm_motion_control) StdoutLine: {'line': b'\n'}
+[0.037160] (arm_motion_control) StdoutLine: {'line': b'1: Test command: /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/python3 "-u" "/path/to/ros2-cpp-motion-control/.pixi/envs/default/share/ament_cmake_test/cmake/run_test.py" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml" "--package-name" "arm_motion_control" "--output-file" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/ament_cmake_gtest/test_trajectory.txt" "--command" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_trajectory" "--gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml"\n'}
+[0.037314] (arm_motion_control) StdoutLine: {'line': b'1: Working Directory: /path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[0.037427] (arm_motion_control) StdoutLine: {'line': b'1: Test timeout computed to be: 60\n'}
+[0.098868] (-) TimerEvent: {}
+[0.126510] (arm_motion_control) StdoutLine: {'line': b"1: -- run_test.py: invoking following command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control':\n"}
+[0.126787] (arm_motion_control) StdoutLine: {'line': b'1:  - /path/to/ros2-cpp-motion-control/build/arm_motion_control/test_trajectory --gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml\n'}
+[0.128939] (arm_motion_control) StdoutLine: {'line': b'1: Running main() from /home/conda/feedstock_root/build_artifacts/bld/rattler-build_gtest_1786419392/work/googletest/src/gtest_main.cc\n'}
+[0.129156] (arm_motion_control) StdoutLine: {'line': b'1: [==========] Running 8 tests from 3 test suites.\n'}
+[0.129527] (arm_motion_control) StdoutLine: {'line': b'1: [----------] Global test environment set-up.\n'}
+[0.129664] (arm_motion_control) StdoutLine: {'line': b'1: [----------] 1 test from Quintic\n'}
+[0.129785] (arm_motion_control) StdoutLine: {'line': b'1: [ RUN      ] Quintic.EndpointsMatchPosVelAcc\n'}
+[0.129888] (arm_motion_control) StdoutLine: {'line': b'1: [       OK ] Quintic.EndpointsMatchPosVelAcc (0 ms)\n'}
+[0.129970] (arm_motion_control) StdoutLine: {'line': b'1: [----------] 1 test from Quintic (0 ms total)\n'}
+[0.130062] (arm_motion_control) StdoutLine: {'line': b'1: \n'}
+[0.130363] (arm_motion_control) StdoutLine: {'line': b'1: [----------] 6 tests from Trajectory\n'}
+[0.130452] (arm_motion_control) StdoutLine: {'line': b'1: [ RUN      ] Trajectory.RestToRestEndpointsAndSmooth\n'}
+[0.130530] (arm_motion_control) StdoutLine: {'line': b'1: [       OK ] Trajectory.RestToRestEndpointsAndSmooth (0 ms)\n'}
+[0.130586] (arm_motion_control) StdoutLine: {'line': b'1: [ RUN      ] Trajectory.MultiWaypointPassesThroughPoints\n'}
+[0.130654] (arm_motion_control) StdoutLine: {'line': b'1: [       OK ] Trajectory.MultiWaypointPassesThroughPoints (0 ms)\n'}
+[0.130725] (arm_motion_control) StdoutLine: {'line': b'1: [ RUN      ] Trajectory.RejectsPositionOverLimit\n'}
+[0.130781] (arm_motion_control) StdoutLine: {'line': b'1: [       OK ] Trajectory.RejectsPositionOverLimit (0 ms)\n'}
+[0.130834] (arm_motion_control) StdoutLine: {'line': b'1: [ RUN      ] Trajectory.RejectsVelocityOverLimit\n'}
+[0.130888] (arm_motion_control) StdoutLine: {'line': b'1: [       OK ] Trajectory.RejectsVelocityOverLimit (0 ms)\n'}
+[0.130946] (arm_motion_control) StdoutLine: {'line': b'1: [ RUN      ] Trajectory.RejectsNaNAndInf\n'}
+[0.131007] (arm_motion_control) StdoutLine: {'line': b'1: [       OK ] Trajectory.RejectsNaNAndInf (0 ms)\n'}
+[0.131061] (arm_motion_control) StdoutLine: {'line': b'1: [ RUN      ] Trajectory.RejectsBadTimingAndShape\n'}
+[0.131115] (arm_motion_control) StdoutLine: {'line': b'1: [       OK ] Trajectory.RejectsBadTimingAndShape (0 ms)\n'}
+[0.131169] (arm_motion_control) StdoutLine: {'line': b'1: [----------] 6 tests from Trajectory (0 ms total)\n'}
+[0.131225] (arm_motion_control) StdoutLine: {'line': b'1: \n'}
+[0.131281] (arm_motion_control) StdoutLine: {'line': b'1: [----------] 1 test from Controller\n'}
+[0.131337] (arm_motion_control) StdoutLine: {'line': b'1: [ RUN      ] Controller.RejectedGoalKeepsHolding\n'}
+[0.131394] (arm_motion_control) StdoutLine: {'line': b'1: [       OK ] Controller.RejectedGoalKeepsHolding (0 ms)\n'}
+[0.131463] (arm_motion_control) StdoutLine: {'line': b'1: [----------] 1 test from Controller (0 ms total)\n'}
+[0.131520] (arm_motion_control) StdoutLine: {'line': b'1: \n'}
+[0.131576] (arm_motion_control) StdoutLine: {'line': b'1: [----------] Global test environment tear-down\n'}
+[0.131662] (arm_motion_control) StdoutLine: {'line': b'1: [==========] 8 tests from 3 test suites ran. (0 ms total)\n'}
+[0.131719] (arm_motion_control) StdoutLine: {'line': b'1: [  PASSED  ] 8 tests.\n'}
+[0.131774] (arm_motion_control) StdoutLine: {'line': b'1: -- run_test.py: return code 0\n'}
+[0.131838] (arm_motion_control) StdoutLine: {'line': b"1: -- run_test.py: inject classname prefix into gtest result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml'\n"}
+[0.131900] (arm_motion_control) StdoutLine: {'line': b"1: -- run_test.py: verify result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml'\n"}
+[0.151417] (arm_motion_control) StdoutLine: {'line': b'1/4 Test #1: test_trajectory ..................   Passed    0.12 sec\n'}
+[0.151680] (arm_motion_control) StdoutLine: {'line': b'test 2\n'}
+[0.151758] (arm_motion_control) StdoutLine: {'line': b'    Start 2: test_watchdog\n'}
+[0.151821] (arm_motion_control) StdoutLine: {'line': b'\n'}
+[0.151883] (arm_motion_control) StdoutLine: {'line': b'2: Test command: /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/python3 "-u" "/path/to/ros2-cpp-motion-control/.pixi/envs/default/share/ament_cmake_test/cmake/run_test.py" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml" "--package-name" "arm_motion_control" "--output-file" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/ament_cmake_gtest/test_watchdog.txt" "--command" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_watchdog" "--gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml"\n'}
+[0.151965] (arm_motion_control) StdoutLine: {'line': b'2: Working Directory: /path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[0.152023] (arm_motion_control) StdoutLine: {'line': b'2: Test timeout computed to be: 60\n'}
+[0.198984] (-) TimerEvent: {}
+[0.251215] (arm_motion_control) StdoutLine: {'line': b"2: -- run_test.py: invoking following command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control':\n"}
+[0.251432] (arm_motion_control) StdoutLine: {'line': b'2:  - /path/to/ros2-cpp-motion-control/build/arm_motion_control/test_watchdog --gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml\n'}
+[0.253388] (arm_motion_control) StdoutLine: {'line': b'2: Running main() from /home/conda/feedstock_root/build_artifacts/bld/rattler-build_gtest_1786419392/work/googletest/src/gtest_main.cc\n'}
+[0.253554] (arm_motion_control) StdoutLine: {'line': b'2: [==========] Running 5 tests from 2 test suites.\n'}
+[0.253669] (arm_motion_control) StdoutLine: {'line': b'2: [----------] Global test environment set-up.\n'}
+[0.253759] (arm_motion_control) StdoutLine: {'line': b'2: [----------] 2 tests from Watchdog\n'}
+[0.253849] (arm_motion_control) StdoutLine: {'line': b'2: [ RUN      ] Watchdog.TripsOnlyAfterTimeout\n'}
+[0.253933] (arm_motion_control) StdoutLine: {'line': b'2: [       OK ] Watchdog.TripsOnlyAfterTimeout (0 ms)\n'}
+[0.254016] (arm_motion_control) StdoutLine: {'line': b'2: [ RUN      ] Watchdog.ZeroTimeoutDisables\n'}
+[0.254100] (arm_motion_control) StdoutLine: {'line': b'2: [       OK ] Watchdog.ZeroTimeoutDisables (0 ms)\n'}
+[0.254357] (arm_motion_control) StdoutLine: {'line': b'2: [----------] 2 tests from Watchdog (0 ms total)\n'}
+[0.254425] (arm_motion_control) StdoutLine: {'line': b'2: \n'}
+[0.254487] (arm_motion_control) StdoutLine: {'line': b'2: [----------] 3 tests from Controller\n'}
+[0.254549] (arm_motion_control) StdoutLine: {'line': b'2: [ RUN      ] Controller.WatchdogHoldsMeasuredPositionWhenCommandsStop\n'}
+[0.254634] (arm_motion_control) StdoutLine: {'line': b'2: [       OK ] Controller.WatchdogHoldsMeasuredPositionWhenCommandsStop (0 ms)\n'}
+[0.254702] (arm_motion_control) StdoutLine: {'line': b'2: [ RUN      ] Controller.RefreshedCommandsKeepTracking\n'}
+[0.254762] (arm_motion_control) StdoutLine: {'line': b'2: [       OK ] Controller.RefreshedCommandsKeepTracking (0 ms)\n'}
+[0.254821] (arm_motion_control) StdoutLine: {'line': b'2: [ RUN      ] Controller.FinishedTrajectoryHoldsGoalWithoutWatchdog\n'}
+[0.254880] (arm_motion_control) StdoutLine: {'line': b'2: [       OK ] Controller.FinishedTrajectoryHoldsGoalWithoutWatchdog (0 ms)\n'}
+[0.254939] (arm_motion_control) StdoutLine: {'line': b'2: [----------] 3 tests from Controller (0 ms total)\n'}
+[0.254997] (arm_motion_control) StdoutLine: {'line': b'2: \n'}
+[0.255055] (arm_motion_control) StdoutLine: {'line': b'2: [----------] Global test environment tear-down\n'}
+[0.255125] (arm_motion_control) StdoutLine: {'line': b'2: [==========] 5 tests from 2 test suites ran. (0 ms total)\n'}
+[0.255184] (arm_motion_control) StdoutLine: {'line': b'2: [  PASSED  ] 5 tests.\n'}
+[0.255242] (arm_motion_control) StdoutLine: {'line': b'2: -- run_test.py: return code 0\n'}
+[0.255301] (arm_motion_control) StdoutLine: {'line': b"2: -- run_test.py: inject classname prefix into gtest result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml'\n"}
+[0.261318] (arm_motion_control) StdoutLine: {'line': b"2: -- run_test.py: verify result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml'\n"}
+[0.277454] (arm_motion_control) StdoutLine: {'line': b'2/4 Test #2: test_watchdog ....................   Passed    0.13 sec\n'}
+[0.277683] (arm_motion_control) StdoutLine: {'line': b'test 3\n'}
+[0.277763] (arm_motion_control) StdoutLine: {'line': b'    Start 3: test_fault_injection\n'}
+[0.277841] (arm_motion_control) StdoutLine: {'line': b'\n'}
+[0.277901] (arm_motion_control) StdoutLine: {'line': b'3: Test command: /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/python3 "-u" "/path/to/ros2-cpp-motion-control/.pixi/envs/default/share/ament_cmake_test/cmake/run_test.py" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml" "--package-name" "arm_motion_control" "--output-file" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/ament_cmake_gtest/test_fault_injection.txt" "--command" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_fault_injection" "--gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml"\n'}
+[0.277985] (arm_motion_control) StdoutLine: {'line': b'3: Working Directory: /path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[0.278044] (arm_motion_control) StdoutLine: {'line': b'3: Test timeout computed to be: 120\n'}
+[0.299110] (-) TimerEvent: {}
+[0.367841] (arm_motion_control) StdoutLine: {'line': b"3: -- run_test.py: invoking following command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control':\n"}
+[0.367979] (arm_motion_control) StdoutLine: {'line': b'3:  - /path/to/ros2-cpp-motion-control/build/arm_motion_control/test_fault_injection --gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml\n'}
+[0.370648] (arm_motion_control) StdoutLine: {'line': b'3: [==========] Running 6 tests from 1 test suite.\n'}
+[0.370780] (arm_motion_control) StdoutLine: {'line': b'3: [----------] Global test environment set-up.\n'}
+[0.370849] (arm_motion_control) StdoutLine: {'line': b'3: [----------] 6 tests from FaultInjection\n'}
+[0.370924] (arm_motion_control) StdoutLine: {'line': b'3: [ RUN      ] FaultInjection.BaselineStreaming\n'}
+[0.399213] (-) TimerEvent: {}
+[0.499476] (-) TimerEvent: {}
+[0.599720] (-) TimerEvent: {}
+[0.699961] (-) TimerEvent: {}
+[0.729598] (arm_motion_control) StdoutLine: {'line': b'3: [       OK ] FaultInjection.BaselineStreaming (358 ms)\n'}
+[0.729803] (arm_motion_control) StdoutLine: {'line': b'3: [ RUN      ] FaultInjection.DroppedMessages30Percent\n'}
+[0.800094] (-) TimerEvent: {}
+[0.900397] (-) TimerEvent: {}
+[0.901269] (arm_motion_control) StdoutLine: {'line': b'3: [       OK ] FaultInjection.DroppedMessages30Percent (171 ms)\n'}
+[0.901430] (arm_motion_control) StdoutLine: {'line': b'3: [ RUN      ] FaultInjection.CommandsStopMidMotion\n'}
+[1.000538] (-) TimerEvent: {}
+[1.042062] (arm_motion_control) StdoutLine: {'line': b'3: [       OK ] FaultInjection.CommandsStopMidMotion (140 ms)\n'}
+[1.042256] (arm_motion_control) StdoutLine: {'line': b'3: [ RUN      ] FaultInjection.LateMessages300ms\n'}
+[1.100680] (-) TimerEvent: {}
+[1.181459] (arm_motion_control) StdoutLine: {'line': b'3: [       OK ] FaultInjection.LateMessages300ms (139 ms)\n'}
+[1.181637] (arm_motion_control) StdoutLine: {'line': b'3: [ RUN      ] FaultInjection.StaleMessageOlderThanTrajectory\n'}
+[1.200769] (-) TimerEvent: {}
+[1.300952] (-) TimerEvent: {}
+[1.313749] (arm_motion_control) StdoutLine: {'line': b'3: /path/to/ros2-cpp-motion-control/test/test_fault_injection.cpp:163: Failure\n'}
+[1.313948] (arm_motion_control) StdoutLine: {'line': b'3: Expected: (s.max_ref_jump) < (2.61 * 0.001 * 1.01), actual: 0.0032338407547671116 vs 0.0026360999999999997\n'}
+[1.314053] (arm_motion_control) StdoutLine: {'line': b'3: \n'}
+[1.314152] (arm_motion_control) StdoutLine: {'line': b'3: [  FAILED  ] FaultInjection.StaleMessageOlderThanTrajectory (132 ms)\n'}
+[1.314248] (arm_motion_control) StdoutLine: {'line': b'3: [ RUN      ] FaultInjection.OverLimitAndNaNGoalsMidMotion\n'}
+[1.401054] (-) TimerEvent: {}
+[1.454450] (arm_motion_control) StdoutLine: {'line': b'3: [       OK ] FaultInjection.OverLimitAndNaNGoalsMidMotion (140 ms)\n'}
+[1.454682] (arm_motion_control) StdoutLine: {'line': b'3: [----------] 6 tests from FaultInjection (1083 ms total)\n'}
+[1.454925] (arm_motion_control) StdoutLine: {'line': b'3: \n'}
+[1.455029] (arm_motion_control) StdoutLine: {'line': b'3: [----------] Global test environment tear-down\n'}
+[1.455128] (arm_motion_control) StdoutLine: {'line': b'3: [==========] 6 tests from 1 test suite ran. (1083 ms total)\n'}
+[1.455233] (arm_motion_control) StdoutLine: {'line': b'3: [  PASSED  ] 5 tests.\n'}
+[1.455327] (arm_motion_control) StdoutLine: {'line': b'3: [  FAILED  ] 1 test, listed below:\n'}
+[1.455423] (arm_motion_control) StdoutLine: {'line': b'3: [  FAILED  ] FaultInjection.StaleMessageOlderThanTrajectory\n'}
+[1.455520] (arm_motion_control) StdoutLine: {'line': b'3: \n'}
+[1.455631] (arm_motion_control) StdoutLine: {'line': b'3:  1 FAILED TEST\n'}
+[1.492576] (arm_motion_control) StdoutLine: {'line': b'3: -- run_test.py: return code 1\n'}
+[1.493252] (arm_motion_control) StdoutLine: {'line': b"3: -- run_test.py: inject classname prefix into gtest result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml'\n"}
+[1.493408] (arm_motion_control) StdoutLine: {'line': b"3: -- run_test.py: verify result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml'\n"}
+[1.501193] (-) TimerEvent: {}
+[1.521193] (arm_motion_control) StdoutLine: {'line': b'3/4 Test #3: test_fault_injection .............***Failed    1.24 sec\n'}
+[1.521376] (arm_motion_control) StdoutLine: {'line': b'test 4\n'}
+[1.521467] (arm_motion_control) StdoutLine: {'line': b'    Start 4: test_integration\n'}
+[1.521548] (arm_motion_control) StdoutLine: {'line': b'\n'}
+[1.521657] (arm_motion_control) StdoutLine: {'line': b'4: Test command: /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/python3 "-u" "/path/to/ros2-cpp-motion-control/.pixi/envs/default/share/ament_cmake_test/cmake/run_test.py" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml" "--package-name" "arm_motion_control" "--output-file" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/ament_cmake_gtest/test_integration.txt" "--command" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_integration" "--gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml"\n'}
+[1.521770] (arm_motion_control) StdoutLine: {'line': b'4: Working Directory: /path/to/ros2-cpp-motion-control/build/arm_motion_control\n'}
+[1.521849] (arm_motion_control) StdoutLine: {'line': b'4: Test timeout computed to be: 120\n'}
+[1.601314] (-) TimerEvent: {}
+[1.636471] (arm_motion_control) StdoutLine: {'line': b"4: -- run_test.py: invoking following command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control':\n"}
+[1.636763] (arm_motion_control) StdoutLine: {'line': b'4:  - /path/to/ros2-cpp-motion-control/build/arm_motion_control/test_integration --gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml\n'}
+[1.701437] (-) TimerEvent: {}
+[1.731702] (arm_motion_control) StdoutLine: {'line': b'4: [==========] Running 3 tests from 1 test suite.\n'}
+[1.731853] (arm_motion_control) StdoutLine: {'line': b'4: [----------] Global test environment set-up.\n'}
+[1.731923] (arm_motion_control) StdoutLine: {'line': b'4: [----------] 3 tests from Integration\n'}
+[1.731987] (arm_motion_control) StdoutLine: {'line': b'4: [ RUN      ] Integration.GoalReachedWithLowTrackingError\n'}
+[1.801555] (-) TimerEvent: {}
+[1.901786] (-) TimerEvent: {}
+[1.938835] (arm_motion_control) StdoutLine: {'line': b'4: [INFO] [1794251132.929403296] [motion_control]: MuJoCo model /path/to/ros2-cpp-motion-control/assets/franka_emika_panda/panda_nohand.xml, 7 joints, dt=0.0010 s, cmd_timeout=0.500 s\n'}
+[2.001901] (-) TimerEvent: {}
+[2.102220] (-) TimerEvent: {}
+[2.202562] (-) TimerEvent: {}
+[2.312264] (-) TimerEvent: {}
+[2.412575] (-) TimerEvent: {}
+[2.512809] (-) TimerEvent: {}
+[2.613168] (-) TimerEvent: {}
+[2.713569] (-) TimerEvent: {}
+[2.813928] (-) TimerEvent: {}
+[2.914305] (-) TimerEvent: {}
+[3.014777] (-) TimerEvent: {}
+[3.115078] (-) TimerEvent: {}
+[3.215246] (-) TimerEvent: {}
+[3.315498] (-) TimerEvent: {}
+[3.415931] (-) TimerEvent: {}
+[3.516284] (-) TimerEvent: {}
+[3.616605] (-) TimerEvent: {}
+[3.716891] (-) TimerEvent: {}
+[3.817293] (-) TimerEvent: {}
+[3.917673] (-) TimerEvent: {}
+[4.017982] (-) TimerEvent: {}
+[4.118185] (-) TimerEvent: {}
+[4.218376] (-) TimerEvent: {}
+[4.318596] (-) TimerEvent: {}
+[4.418855] (-) TimerEvent: {}
+[4.519218] (-) TimerEvent: {}
+[4.619610] (-) TimerEvent: {}
+[4.719943] (-) TimerEvent: {}
+[4.820310] (-) TimerEvent: {}
+[4.920684] (-) TimerEvent: {}
+[5.021037] (-) TimerEvent: {}
+[5.087523] (arm_motion_control) StdoutLine: {'line': b'4: [       OK ] Integration.GoalReachedWithLowTrackingError (3355 ms)\n'}
+[5.087996] (arm_motion_control) StdoutLine: {'line': b'4: [ RUN      ] Integration.WatchdogHoldsWhenCommandsStop\n'}
+[5.121156] (-) TimerEvent: {}
+[5.171513] (arm_motion_control) StdoutLine: {'line': b'4: [INFO] [1794251136.162119226] [motion_control]: MuJoCo model /path/to/ros2-cpp-motion-control/assets/franka_emika_panda/panda_nohand.xml, 7 joints, dt=0.0010 s, cmd_timeout=0.300 s\n'}
+[5.221423] (-) TimerEvent: {}
+[5.321690] (-) TimerEvent: {}
+[5.421964] (-) TimerEvent: {}
+[5.522226] (-) TimerEvent: {}
+[5.622564] (-) TimerEvent: {}
+[5.722904] (-) TimerEvent: {}
+[5.823251] (-) TimerEvent: {}
+[5.923497] (-) TimerEvent: {}
+[6.023837] (-) TimerEvent: {}
+[6.124267] (-) TimerEvent: {}
+[6.224538] (-) TimerEvent: {}
+[6.324838] (-) TimerEvent: {}
+[6.425243] (-) TimerEvent: {}
+[6.525620] (-) TimerEvent: {}
+[6.626020] (-) TimerEvent: {}
+[6.726278] (-) TimerEvent: {}
+[6.826612] (-) TimerEvent: {}
+[6.926843] (-) TimerEvent: {}
+[7.027178] (-) TimerEvent: {}
+[7.127565] (-) TimerEvent: {}
+[7.227936] (-) TimerEvent: {}
+[7.309063] (arm_motion_control) StdoutLine: {'line': b'4: [       OK ] Integration.WatchdogHoldsWhenCommandsStop (2221 ms)\n'}
+[7.309782] (arm_motion_control) StdoutLine: {'line': b'4: [ RUN      ] Integration.BadGoalRejectedOverRos\n'}
+[7.328082] (-) TimerEvent: {}
+[7.372823] (arm_motion_control) StdoutLine: {'line': b'4: [INFO] [1794251138.363271516] [motion_control]: MuJoCo model /path/to/ros2-cpp-motion-control/assets/franka_emika_panda/panda_nohand.xml, 7 joints, dt=0.0010 s, cmd_timeout=0.500 s\n'}
+[7.396355] (arm_motion_control) StdoutLine: {'line': b'4: [WARN] [1794251138.386813483] [motion_control]: goal rejected: point 0: position is NaN/Inf\n'}
+[7.396537] (arm_motion_control) StdoutLine: {'line': b'4: [WARN] [1794251138.386882116] [motion_control]: goal rejected: point 0: joint 1 position 2.500000 outside [-1.762800, 1.762800]\n'}
+[7.428201] (-) TimerEvent: {}
+[7.528410] (-) TimerEvent: {}
+[7.628718] (-) TimerEvent: {}
+[7.728977] (-) TimerEvent: {}
+[7.829365] (-) TimerEvent: {}
+[7.900713] (arm_motion_control) StdoutLine: {'line': b'4: [       OK ] Integration.BadGoalRejectedOverRos (591 ms)\n'}
+[7.901024] (arm_motion_control) StdoutLine: {'line': b'4: [----------] 3 tests from Integration (6168 ms total)\n'}
+[7.901252] (arm_motion_control) StdoutLine: {'line': b'4: \n'}
+[7.901320] (arm_motion_control) StdoutLine: {'line': b'4: [----------] Global test environment tear-down\n'}
+[7.901381] (arm_motion_control) StdoutLine: {'line': b'4: [==========] 3 tests from 1 test suite ran. (6168 ms total)\n'}
+[7.901444] (arm_motion_control) StdoutLine: {'line': b'4: [  PASSED  ] 3 tests.\n'}
+[7.929496] (-) TimerEvent: {}
+[8.030632] (-) TimerEvent: {}
+[8.072647] (arm_motion_control) StdoutLine: {'line': b'4: -- run_test.py: return code 0\n'}
+[8.072918] (arm_motion_control) StdoutLine: {'line': b"4: -- run_test.py: inject classname prefix into gtest result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml'\n"}
+[8.073014] (arm_motion_control) StdoutLine: {'line': b"4: -- run_test.py: verify result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml'\n"}
+[8.099625] (arm_motion_control) StdoutLine: {'line': b'4/4 Test #4: test_integration .................   Passed    6.57 sec\n'}
+[8.099786] (arm_motion_control) StdoutLine: {'line': b'\n'}
+[8.099892] (arm_motion_control) StdoutLine: {'line': b'75% tests passed, 1 tests failed out of 4\n'}
+[8.099981] (arm_motion_control) StdoutLine: {'line': b'\n'}
+[8.100069] (arm_motion_control) StdoutLine: {'line': b'Label Time Summary:\n'}
+[8.100156] (arm_motion_control) StdoutLine: {'line': b'gtest    =   8.06 sec*proc (4 tests)\n'}
+[8.100244] (arm_motion_control) StdoutLine: {'line': b'\n'}
+[8.100330] (arm_motion_control) StdoutLine: {'line': b'Total Test time (real) =   8.06 sec\n'}
+[8.100417] (arm_motion_control) StdoutLine: {'line': b'\n'}
+[8.100513] (arm_motion_control) StdoutLine: {'line': b'The following tests FAILED:\n'}
+[8.100605] (arm_motion_control) StdoutLine: {'line': b'\t  3 - test_fault_injection (Failed)                     gtest\n'}
+[8.109724] (arm_motion_control) CommandEnded: {'returncode': 8}
+[8.110246] (arm_motion_control) TestFailure: {'identifier': 'arm_motion_control'}
+[8.110276] (arm_motion_control) JobEnded: {'identifier': 'arm_motion_control', 'rc': 0}
+[8.110699] (-) EventReactorShutdown: {}

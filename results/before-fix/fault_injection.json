@@ -1,0 +1,8 @@
+{
+  "bad_goals_mid_motion": {"rms_tracking_err_rad": 0.026843, "max_tracking_err_rad": 0.213204, "max_ref_jump_rad_per_tick": 0.165277, "saturated_ticks": 3, "watchdog_trips": 0, "goals_accepted": 21, "goals_rejected": 2, "final_err_rad": 4.41787e-11, "hold_drift_rad": 0, "max_cmd_gap_s": 0.1},
+  "baseline_streaming": {"rms_tracking_err_rad": 0.0268768, "max_tracking_err_rad": 0.213204, "max_ref_jump_rad_per_tick": 0.165277, "saturated_ticks": 3, "watchdog_trips": 0, "goals_accepted": 21, "goals_rejected": 0, "final_err_rad": 4.40342e-11, "hold_drift_rad": 0, "max_cmd_gap_s": 0.1},
+  "commands_stop_mid_motion": {"rms_tracking_err_rad": 0.0346886, "max_tracking_err_rad": 0.213204, "max_ref_jump_rad_per_tick": 0.165277, "saturated_ticks": 3, "watchdog_trips": 1, "goals_accepted": 8, "goals_rejected": 0, "final_err_rad": 0.000474468, "hold_drift_rad": 0.000116457, "max_cmd_gap_s": 0.1},
+  "dropped_30pct": {"rms_tracking_err_rad": 0.025041, "max_tracking_err_rad": 0.217049, "max_ref_jump_rad_per_tick": 0.172595, "saturated_ticks": 2, "watchdog_trips": 0, "goals_accepted": 14, "goals_rejected": 0, "final_err_rad": 1.36479e-11, "hold_drift_rad": 0, "max_cmd_gap_s": 0.3},
+  "late_300ms": {"rms_tracking_err_rad": 0.0343626, "max_tracking_err_rad": 0.272728, "max_ref_jump_rad_per_tick": 0.215161, "saturated_ticks": 6, "watchdog_trips": 0, "goals_accepted": 21, "goals_rejected": 0, "final_err_rad": 5.96889e-12, "hold_drift_rad": 0, "max_cmd_gap_s": 0.1},
+  "stale_5s": {"rms_tracking_err_rad": 0, "max_tracking_err_rad": 0, "max_ref_jump_rad_per_tick": 0.6, "saturated_ticks": 167, "watchdog_trips": 0, "goals_accepted": 1, "goals_rejected": 0, "final_err_rad": 8.81439e-12, "hold_drift_rad": 0, "max_cmd_gap_s": 0}
+}

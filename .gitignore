@@ -1,0 +1,5 @@
+.pixi/
+build/
+install/
+log/
+third_party/*.tar.gz

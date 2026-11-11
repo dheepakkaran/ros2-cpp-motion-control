@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROS 2 Motion Control</title>
+<meta name="description" content="A C++17 ROS 2 Jazzy node driving a simulated Franka Panda through the MuJoCo C API: quintic trajectories, PD + gravity compensation at 1 kHz, a command watchdog, and fault-injection tests that found two real bugs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --ink:#0a0a0a; --ink2:#3d3d3d; --muted:#737373; --line:#e5e5e5; --soft:#f5f5f5;
+  --bar0:#d4d4d4; --bar1:#0a0a0a;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0a0a0a;--ink:#fafafa;--ink2:#d4d4d4;--muted:#a3a3a3;--line:#262626;--soft:#141414;--bar0:#404040;--bar1:#fafafa}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+.narrow{max-width:680px}
+
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:26px;height:56px;overflow-x:auto;white-space:nowrap}
+nav .brand{font-weight:600;letter-spacing:-.01em;text-decoration:none;margin-right:auto}
+nav a{font-size:14px;color:var(--muted);text-decoration:none} nav a:hover{color:var(--ink)}
+
+header{padding:112px 0 88px;border-bottom:1px solid var(--line)}
+.kicker{font:500 12px/1 "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:22px 0 26px;max-width:820px}
+.lede{font-size:20px;line-height:1.6;color:var(--ink2);max-width:680px;margin:0}
+.meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;font-size:14px;color:var(--muted)}
+.meta a{color:var(--ink)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:30px 24px 30px 0}
+.stat + .stat{padding-left:24px;border-left:1px solid var(--line)}
+.stat .v{font-size:40px;font-weight:600;letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.45}
+
+section{padding:96px 0;border-bottom:1px solid var(--line)}
+.num{font:500 12px/1 "JetBrains Mono",monospace;color:var(--muted);letter-spacing:.06em;margin-bottom:18px}
+h2{font-size:clamp(28px,3.6vw,38px);line-height:1.15;letter-spacing:-.03em;font-weight:700;margin:0 0 20px;max-width:760px}
+h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin:0 0 6px}
+p{margin:0 0 16px;color:var(--ink2)}
+.muted{color:var(--muted)}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.item{border-top:1px solid var(--ink);padding-top:18px}
+.item p{font-size:15.5px;margin:0}
+
+table{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 0}
+th,td{text-align:left;padding:13px 12px 13px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+td b{font-weight:600;color:var(--ink)}
+
+figure{margin:40px 0 0}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:14px}
+.panel{border:1px solid var(--line);border-radius:4px;padding:28px}
+svg text{font-family:Inter,system-ui,sans-serif}
+.chart{width:100%;height:auto;display:block}
+.chart .gl{stroke:var(--line)} .chart .lab{fill:var(--ink);font-size:13px;font-weight:500}
+.chart .val{fill:var(--ink);font:500 12.5px "JetBrains Mono",monospace} .chart .val0{fill:var(--muted);font:500 12.5px "JetBrains Mono",monospace}
+.bar{transition:width 1s cubic-bezier(.25,.8,.25,1)}
+.key{display:flex;gap:22px;font-size:13px;color:var(--muted);margin-top:14px}
+.key i{display:inline-block;width:10px;height:10px;margin-right:7px;vertical-align:0}
+
+.pipe{width:100%;height:auto;display:block}
+.pipe rect{fill:var(--bg);stroke:var(--ink);stroke-width:1.2}
+.pipe .soft{stroke:var(--line);stroke-width:1.2}
+.pipe text{fill:var(--ink);font-size:13.5px;font-weight:600}
+.pipe .s{fill:var(--muted);font-size:11.5px;font-weight:400}
+.pipe path{stroke:var(--muted);stroke-width:1.2;fill:none}
+
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;padding:22px 0;border-bottom:1px solid var(--line)}
+ol.steps li::before{content:counter(s,decimal-leading-zero);font:500 13px "JetBrains Mono",monospace;color:var(--muted);padding-top:2px}
+ol.steps h3{margin-bottom:4px} ol.steps p{margin:0;font-size:15.5px}
+
+pre{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:22px;overflow:auto;font:13.5px/1.75 "JetBrains Mono",monospace;color:var(--ink);margin:0}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:11px 18px;border:1px solid var(--ink);border-radius:4px;text-decoration:none;font-size:15px;font-weight:500}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn:hover{text-decoration:none;opacity:.85}
+footer{padding:44px 0 64px;font-size:13.5px;color:var(--muted)}
+
+.fade{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
+.fade.in{opacity:1;transform:none}
+
+@media (max-width:820px){
+  .stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){padding-left:0;border-left:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .cols,.cols3{grid-template-columns:1fr;gap:28px} section{padding:72px 0} header{padding:80px 0 64px}
+  th:nth-child(1),td:nth-child(1){padding-right:8px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}.fade{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#">ROS 2 Motion Control</a>
+  <a href="#problem">Problem</a><a href="#approach">Approach</a><a href="#results">Results</a><a href="#demo">Demo</a><a href="#lessons">Lessons</a><a href="#run">Run</a>
+  <a href="https://github.com/dheepakkaran/ros2-cpp-motion-control">GitHub</a>
+</div></nav>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Simulation · C++17 · ROS 2 Jazzy · November 2026</div>
+    <h1>A robot arm controller that stays smooth when its commands arrive late, twice, or not at all.</h1>
+    <p class="lede">A C++17 ROS 2 node drives a simulated Franka Panda through the MuJoCo C API with quintic trajectories and PD + gravity compensation at 1 kHz. Fault-injection tests attacked the command stream and found two real bugs, each fixed and written up as a root-cause analysis.</p>
+    <div class="meta"><span>C++17 · rclcpp · MuJoCo C API · GoogleTest · colcon · pixi</span><a href="https://github.com/dheepakkaran/ros2-cpp-motion-control">Source code</a><a href="https://github.com/dheepakkaran/ros2-cpp-motion-control/blob/main/RESULTS.md">Full results</a></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="v" data-count="26" data-suffix="/26">26/26</div><div class="l">colcon tests passing: 22 GoogleTest cases plus 4 CTest entries.</div></div>
+    <div class="stat"><div class="v" data-count="0.08" data-dec="2" data-suffix="°">0.08°</div><div class="l">RMS tracking error over real ROS topics (0.00133 rad).</div></div>
+    <div class="stat"><div class="v" data-count="2">2</div><div class="l">real bugs found by fault injection, both fixed, both written up.</div></div>
+    <div class="stat"><div class="v" data-count="999.8" data-dec="1">999.8</div><div class="l">physics + control steps per wall second (1 ms step).</div></div>
+  </div>
+</div>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="num">01 — Problem</div>
+    <h2 class="fade">The easy case is every message on time. The command stream is rarely that.</h2>
+    <div class="narrow fade">
+      <p>Goals get re-sent to keep a watchdog fed, dropped by the network, delivered late, or stop arriving when a client dies. Each of those can make the reference the arm is tracking jump, and a jump in the reference becomes a torque spike.</p>
+    </div>
+    <div class="cols" style="margin-top:40px">
+      <div class="item fade"><h3>What is measured</h3><p>Tracking error, the largest reference jump in one 1 ms tick, and how many ticks hit the torque limit, for each injected fault.</p></div>
+      <div class="item fade"><h3>What counts as smooth</h3><p>The reference may never move more than the joint velocity limit times 1 ms per tick. Every fault test asserts it.</p></div>
+    </div>
+    <div class="cols3" style="margin-top:48px">
+      <div class="fade"><h3>Faults injected</h3><p class="muted" style="font-size:15.5px">Re-sends every 100 ms, 30% dropped, 300 ms late, one message 5 s stale, client dies mid-move, NaN and over-limit goals.</p></div>
+      <div class="fade"><h3>What it is not</h3><p class="muted" style="font-size:15.5px">Hardware or hard real time. It runs in simulation on a normal Linux kernel.</p></div>
+      <div class="fade"><h3>Environment</h3><p class="muted" style="font-size:15.5px">ROS 2 Jazzy, colcon and libmujoco from pixi and RoboStack, with no sudo and no system ROS install.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="num">02 — Approach</div>
+    <h2 class="fade">A controller core without ROS, wrapped in a thin rclcpp node.</h2>
+    <figure class="panel fade">
+      <svg viewBox="0 0 900 250" class="pipe" role="img" aria-label="Pipeline: client node sends JointTrajectory, goal check, quintic trajectory, PD plus gravity compensation, MuJoCo Panda; watchdog feeds the controller; joint states return to the client">
+        <defs><marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" style="fill:var(--muted);stroke:none"/></marker></defs>
+        <rect x="10" y="40" width="130" height="64" rx="3" class="soft"/><text x="75" y="69" text-anchor="middle">Client node</text><text x="75" y="88" text-anchor="middle" class="s">JointTrajectory</text>
+        <rect x="180" y="40" width="130" height="64" rx="3"/><text x="245" y="69" text-anchor="middle">Goal check</text><text x="245" y="88" text-anchor="middle" class="s">NaN · limits · timing</text>
+        <rect x="350" y="40" width="150" height="64" rx="3"/><text x="425" y="69" text-anchor="middle">Quintic trajectory</text><text x="425" y="88" text-anchor="middle" class="s">re-anchored if late</text>
+        <rect x="540" y="40" width="130" height="64" rx="3"/><text x="605" y="69" text-anchor="middle">PD + gravity</text><text x="605" y="88" text-anchor="middle" class="s">1 kHz, clamped</text>
+        <rect x="710" y="40" width="180" height="64" rx="3"/><text x="800" y="69" text-anchor="middle">MuJoCo C API</text><text x="800" y="88" text-anchor="middle" class="s">Franka Panda, 1 ms</text>
+        <rect x="480" y="160" width="190" height="56" rx="3" class="soft"/><text x="575" y="185" text-anchor="middle">Command watchdog</text><text x="575" y="203" text-anchor="middle" class="s">hold measured pose</text>
+        <rect x="710" y="160" width="180" height="56" rx="3" style="fill:var(--ink)"/><text x="800" y="185" text-anchor="middle" style="fill:var(--bg)">JointState</text><text x="800" y="203" text-anchor="middle" class="s" style="fill:var(--bar0)">250 Hz to the client</text>
+        <path d="M140,72 H180" marker-end="url(#ar)"/><path d="M310,72 H350" marker-end="url(#ar)"/><path d="M500,72 H540" marker-end="url(#ar)"/><path d="M670,72 H710" marker-end="url(#ar)"/>
+        <path d="M605,160 V104" marker-end="url(#ar)"/><path d="M800,104 V160" marker-end="url(#ar)"/>
+      </svg>
+    </figure>
+    <ol class="steps" style="margin-top:40px">
+      <li class="fade"><div><h3>Check every goal</h3><p>Position range, waypoint velocity, densely sampled peak velocity, NaN and Inf, and timing. A bad goal is rejected and the current motion carries on.</p></div></li>
+      <li class="fade"><div><h3>Plan quintic segments</h3><p>Position, velocity and acceleration are continuous, so the reference itself never asks for a step in torque.</p></div></li>
+      <li class="fade"><div><h3>Track at 1 kHz</h3><p>PD with gravity and Coriolis compensation from MuJoCo's <code>qfrc_bias</code>, clamped to the Panda's 87 and 12 N·m torque limits, applied through <code>qfrc_applied</code>.</p></div></li>
+      <li class="fade"><div><h3>Hold when commands stop</h3><p>If no command arrives within the timeout, the watchdog holds the measured position instead of finishing a move nobody is asking for any more.</p></div></li>
+    </ol>
+    <div class="cols3" style="margin-top:56px">
+      <div class="item fade"><h3>No ROS in the core</h3><p>Unit and fault tests run it straight against MuJoCo, fast and deterministic.</p></div>
+      <div class="item fade"><h3>Real topics in integration</h3><p>A node and a client in one process exchange real ROS messages.</p></div>
+      <div class="item fade"><h3>Before and after kept</h3><p>Logs of the failing first run are committed next to the fixed run.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <div class="num">03 — Results</div>
+    <h2 class="fade">Fault injection, before and after the two fixes.</h2>
+    <div class="narrow fade"><p>Controller core and MuJoCo Panda in simulated time, a 2 s move to the same goal in every scenario, then 1 s to settle.</p></div>
+
+    <figure class="fade">
+      <h3>Largest reference jump in one 1 ms tick</h3>
+      <p class="muted" style="font-size:15px">Radians, bar length to 0.6 rad. The allowed bound is 0.0026 rad per tick.</p>
+      <svg viewBox="0 0 900 230" class="chart" id="c1"></svg>
+      <div class="key"><span><i style="background:var(--bar0)"></i>Before fixes</span><span><i style="background:var(--bar1)"></i>After fixes</span></div>
+      <figcaption>Before the fixes even the no-fault baseline jumped 0.165 rad in one tick; a single 5 s stale message stepped joint 1 by its whole 0.6 rad move.</figcaption>
+    </figure>
+
+    <figure class="fade" style="margin-top:64px">
+      <h3>RMS tracking error</h3>
+      <p class="muted" style="font-size:15px">Radians, bar length to 0.04 rad.</p>
+      <svg viewBox="0 0 900 230" class="chart" id="c2"></svg>
+      <div class="key"><span><i style="background:var(--bar0)"></i>Before fixes</span><span><i style="background:var(--bar1)"></i>After fixes</span></div>
+      <figcaption>After the fixes every streaming scenario tracks within 0.00134 rad RMS, about twenty times lower than before.</figcaption>
+    </figure>
+
+    <div style="margin-top:64px" class="fade">
+      <table>
+        <thead><tr><th>Measure</th><th>Result</th><th>Reading</th></tr></thead>
+        <tbody>
+          <tr><td>Integration test over ROS topics</td><td class="n"><b>0.00132503 rad</b></td><td>RMS tracking error; final error 6.2e-08 rad</td></tr>
+          <tr><td>Torque-saturated ticks, 5 s stale message</td><td class="n"><b>167 → 0</b></td><td>a step response before RCA-002</td></tr>
+          <tr><td>Watchdog, commands stop at 0.8 s</td><td class="n"><b>1 trip</b></td><td>holds with 0.0123 rad drift</td></tr>
+          <tr><td>Bad goals over ROS</td><td class="n"><b>2 / 2</b></td><td>rejected, 0 drift</td></tr>
+          <tr><td>Control rate</td><td class="n"><b>999.8 / s</b></td><td>soft real time, normal kernel</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="wrap">
+    <div class="num">Demo</div>
+    <h2 class="fade">Every tick of a move, and the watchdog catching a client that stopped.</h2>
+    <figure class="fade">
+      <img src="assets/demo-tracking.png" alt="Three panels: target and tracked joint angles over three seconds, tracking error in milliradians, and joint 1 held by the watchdog after the client stops" style="width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px">
+      <figcaption>Logged by the C++ <code>trajectory_demo</code> tool (controller core + MuJoCo C API, no ROS) at every 1 ms tick to <code>results/demo/trajectory.csv</code>. The baseline RMS of 0.00133 rad matches <code>results/fault_injection.json</code>. Right: the last command arrives at 0.7 s, the 0.5 s watchdog trips at 1.201 s and holds joint 1 where it is.</figcaption>
+    </figure>
+    <figure class="fade" style="margin-top:56px">
+      <img src="assets/demo-panda-move.gif" alt="The Panda arm moving through the logged baseline trajectory" style="width:100%;max-width:640px;height:auto;display:block;border:1px solid var(--line);border-radius:4px">
+      <figcaption>The logged baseline joint angles re-posed in MuJoCo and rendered headless (EGL). Nothing is simulated again for the picture.</figcaption>
+    </figure>
+    <figure class="fade" style="margin-top:40px">
+      <img src="assets/demo-panda-strip.png" alt="Four frames of the move at 0, 0.96, 1.96 and 2.96 seconds" style="width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px">
+      <figcaption>Four frames of the same move, with time, controller mode and the largest target-minus-tracked error. Made by <code>scripts/make_demo_figures.py</code>.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="lessons">
+  <div class="wrap">
+    <div class="num">04 — Lessons</div>
+    <h2 class="fade">Two real bugs, both found by tests written to break the controller.</h2>
+    <ol class="steps">
+      <li class="fade"><div><h3>RCA-001: a re-sent goal made the reference jump</h3><p>The new trajectory took its start state from "now" but its start time from the old message stamp, so every re-send skipped the reference ahead: 0.165 rad in one tick and 3 torque-saturated ticks on a normal command pattern. Fix: evaluate the current plan at the new trajectory's own t = 0, so a re-send rebuilds an identical trajectory. <a href="https://github.com/dheepakkaran/ros2-cpp-motion-control/blob/main/docs/rca/RCA-001-resend-reference-jump.md">Read RCA-001</a></p></div></li>
+      <li class="fade"><div><h3>RCA-002: late or stale stamps made the arm jump</h3><p>The controller trusted the message stamp as the trajectory start. A 300 ms late stream jumped 0.215 rad; one 5 s stale message stepped joint 1 by 0.6 rad and held torque at its limit for 167 ms. Fix: check that the reference is continuous at now and, if not, re-anchor the move to now, once per stamp. <a href="https://github.com/dheepakkaran/ros2-cpp-motion-control/blob/main/docs/rca/RCA-002-late-stale-stamp-jump.md">Read RCA-002</a></p></div></li>
+      <li class="fade"><div><h3>Limit checks on a trajectory are not enough</h3><p>Both bugs passed every per-trajectory check. The jump came from where sampling started, which is why every fault test now bounds the change per tick.</p></div></li>
+      <li class="fade"><div><h3>Some faults needed no fix</h3><p>Dropped messages, commands stopping and bad goals were already handled by the design. RCA-003 records that instead of inventing bugs.</p></div></li>
+    </ol>
+    <div class="cols" style="margin-top:56px">
+      <div class="fade"><h3>Limits</h3><p style="font-size:15.5px">Both nodes run in one process for the integration test; there is no launch_testing or ros2 CLI demo. Stale goals run late rather than being refused. The client must re-send faster than the timeout. Soft real time only.</p></div>
+      <div class="fade"><h3>Next</h3><p style="font-size:15.5px">CI and a Dockerfile, a launch-file demo, a max-latency reject option, jerk logging and inertia feed-forward.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="run" style="border-bottom:0">
+  <div class="wrap">
+    <div class="num">05 — Run</div>
+    <h2 class="fade">No sudo, no system ROS: one pixi environment.</h2>
+<pre class="fade">pixi install                  # ROS 2 Jazzy + colcon + libmujoco, about 1.5 GB
+scripts/build_and_test.sh     # colcon build, colcon test, test-result
+pixi run bash -c 'source install/setup.bash && \
+  install/arm_motion_control/lib/arm_motion_control/motion_control_node'</pre>
+    <div class="btns">
+      <a class="btn solid" href="https://github.com/dheepakkaran/ros2-cpp-motion-control">View on GitHub</a>
+      <a class="btn" href="https://github.com/dheepakkaran/ros2-cpp-motion-control/blob/main/RESULTS.md">Results</a>
+      <a class="btn" href="https://github.com/dheepakkaran/ros2-cpp-motion-control/tree/main/docs/rca">Root-cause analyses</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Dheepak Karan Elumalai Santhakumari · Independent project. Simulation only: no real robot or hardware, nothing deployed. Franka Emika Panda model from MuJoCo Menagerie (Apache-2.0).</div></footer>
+
+<script>
+const NS = "http://www.w3.org/2000/svg", reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); p && p.appendChild(e); return e; };
+const txt = (p, a, s) => { const t = el("text", a, p); t.textContent = s; return t; };
+
+function bars(id, rows) {
+  const s = document.getElementById(id), L = 230, R = 820, top = 10, rh = 54, bh = 14;
+  [0, .5, 1].forEach(f => el("line", {x1: L + (R - L) * f, x2: L + (R - L) * f, y1: 4, y2: top + rh * rows.length - 8, class: "gl"}, s));
+  rows.forEach((r, i) => {
+    const y = top + i * rh;
+    txt(s, {x: 0, y: y + bh + 6, class: "lab"}, r.label);
+    [[r.a, r.at, "var(--bar0)", "val0"], [r.b, r.bt, "var(--bar1)", "val"]].forEach(([v, t, c, cl], k) => {
+      const yy = y + k * (bh + 5), w = (R - L) * v;
+      const b = el("rect", {x: L, y: yy, height: bh, width: reduce ? Math.max(w, 1) : 0, fill: c, class: "bar"}, s); b.dataset.w = Math.max(w, 1);
+      txt(s, {x: L + Math.max(w, 1) + 8, y: yy + bh - 2, class: cl}, t);
+    });
+  });
+}
+bars("c1", [
+  {label: "Baseline re-sends", a: 0.165277 / .6, at: "0.165", b: 0.0005625 / .6, bt: "0.00056"},
+  {label: "30% dropped", a: 0.172595 / .6, at: "0.173", b: 0.0005625 / .6, bt: "0.00056"},
+  {label: "300 ms late", a: 0.215161 / .6, at: "0.215", b: 0.0005625 / .6, bt: "0.00056"},
+  {label: "One 5 s stale", a: 1, at: "0.600", b: 0.00031514 / .6, bt: "0.00032"}]);
+bars("c2", [
+  {label: "Baseline re-sends", a: 0.0268768 / .04, at: "0.0269", b: 0.00132506 / .04, bt: "0.00133"},
+  {label: "30% dropped", a: 0.025041 / .04, at: "0.0250", b: 0.00132506 / .04, bt: "0.00133"},
+  {label: "300 ms late", a: 0.0343626 / .04, at: "0.0344", b: 0.00132506 / .04, bt: "0.00133"},
+  {label: "Commands stop", a: 0.0346886 / .04, at: "0.0347", b: 0.00134224 / .04, bt: "0.00134"}]);
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return; const t = e.target; t.classList.add("in");
+  t.querySelectorAll(".bar").forEach(b => b.setAttribute("width", b.dataset.w));
+  io.unobserve(t);
+}), {threshold: .15});
+document.querySelectorAll(".fade").forEach(e => io.observe(e));
+
+if (!reduce) document.querySelectorAll("[data-count]").forEach(n => {
+  const to = +n.dataset.count, dec = +(n.dataset.dec || 0), pre = n.dataset.prefix || "", suf = n.dataset.suffix || "", t0 = performance.now();
+  const f = now => { const p = Math.min(1, (now - t0) / 1100), v = to * (1 - Math.pow(1 - p, 3)); n.textContent = pre + v.toFixed(dec) + suf; if (p < 1) requestAnimationFrame(f); };
+  requestAnimationFrame(f);
+});
+</script>
+</body>
+</html>

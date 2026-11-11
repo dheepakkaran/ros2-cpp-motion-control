@@ -1,0 +1,7 @@
+build/arm_motion_control/Testing/20261109-1906/Test.xml: 4 tests, 0 errors, 0 failures, 0 skipped
+build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml: 6 tests, 0 errors, 0 failures, 0 skipped
+build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml: 3 tests, 0 errors, 0 failures, 0 skipped
+build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml: 8 tests, 0 errors, 0 failures, 0 skipped
+build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml: 5 tests, 0 errors, 0 failures, 0 skipped
+
+Summary: 26 tests, 0 errors, 0 failures, 0 skipped

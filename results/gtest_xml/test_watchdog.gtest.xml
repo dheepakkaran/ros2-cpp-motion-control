@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="5" failures="0" disabled="0" errors="0" time="0.001" timestamp="2026-11-09T14:06:54.872" name="AllTests">
+  <testsuite name="Watchdog" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-11-09T14:06:54.872">
+    <testcase name="TripsOnlyAfterTimeout" file="/path/to/ros2-cpp-motion-control/test/test_watchdog.cpp" line="8" status="run" result="completed" time="0." timestamp="2026-11-09T14:06:54.872" classname="arm_motion_control.Watchdog" />
+    <testcase name="ZeroTimeoutDisables" file="/path/to/ros2-cpp-motion-control/test/test_watchdog.cpp" line="18" status="run" result="completed" time="0." timestamp="2026-11-09T14:06:54.872" classname="arm_motion_control.Watchdog" />
+  </testsuite>
+  <testsuite name="Controller" tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-11-09T14:06:54.872">
+    <testcase name="WatchdogHoldsMeasuredPositionWhenCommandsStop" file="/path/to/ros2-cpp-motion-control/test/test_watchdog.cpp" line="24" status="run" result="completed" time="0." timestamp="2026-11-09T14:06:54.872" classname="arm_motion_control.Controller" />
+    <testcase name="RefreshedCommandsKeepTracking" file="/path/to/ros2-cpp-motion-control/test/test_watchdog.cpp" line="46" status="run" result="completed" time="0." timestamp="2026-11-09T14:06:54.873" classname="arm_motion_control.Controller" />
+    <testcase name="FinishedTrajectoryHoldsGoalWithoutWatchdog" file="/path/to/ros2-cpp-motion-control/test/test_watchdog.cpp" line="61" status="run" result="completed" time="0." timestamp="2026-11-09T14:06:54.873" classname="arm_motion_control.Controller" />
+  </testsuite>
+</testsuites>

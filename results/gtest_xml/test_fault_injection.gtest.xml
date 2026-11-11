@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="6" failures="0" disabled="0" errors="0" time="3.227" timestamp="2026-11-09T14:06:55.241" name="AllTests">
+  <testsuite name="FaultInjection" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="3.227" timestamp="2026-11-09T14:06:55.241">
+    <testcase name="BaselineStreaming" file="/path/to/ros2-cpp-motion-control/test/test_fault_injection.cpp" line="130" status="run" result="completed" time="1.132" timestamp="2026-11-09T14:06:55.241" classname="arm_motion_control.FaultInjection" />
+    <testcase name="DroppedMessages30Percent" file="/path/to/ros2-cpp-motion-control/test/test_fault_injection.cpp" line="138" status="run" result="completed" time="0.467" timestamp="2026-11-09T14:06:56.374" classname="arm_motion_control.FaultInjection" />
+    <testcase name="CommandsStopMidMotion" file="/path/to/ros2-cpp-motion-control/test/test_fault_injection.cpp" line="147" status="run" result="completed" time="0.378" timestamp="2026-11-09T14:06:56.842" classname="arm_motion_control.FaultInjection" />
+    <testcase name="LateMessages300ms" file="/path/to/ros2-cpp-motion-control/test/test_fault_injection.cpp" line="157" status="run" result="completed" time="0.381" timestamp="2026-11-09T14:06:57.220" classname="arm_motion_control.FaultInjection" />
+    <testcase name="StaleMessageOlderThanTrajectory" file="/path/to/ros2-cpp-motion-control/test/test_fault_injection.cpp" line="166" status="run" result="completed" time="0.454" timestamp="2026-11-09T14:06:57.601" classname="arm_motion_control.FaultInjection" />
+    <testcase name="OverLimitAndNaNGoalsMidMotion" file="/path/to/ros2-cpp-motion-control/test/test_fault_injection.cpp" line="184" status="run" result="completed" time="0.413" timestamp="2026-11-09T14:06:58.055" classname="arm_motion_control.FaultInjection" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,182 @@
+[0.028s] Invoking command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control': AMENT_PREFIX_PATH=/path/to/ros2-cpp-motion-control/install/arm_motion_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/path/to/ros2-cpp-motion-control/install/arm_motion_control DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PIXI_PROMPT=(ros2-cpp-motion-control) /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[0.033s] SetCTestConfiguration:BuildDirectory:/path/to/ros2-cpp-motion-control/build/arm_motion_control
+[0.034s] UpdateCTestConfiguration  from :/path/to/ros2-cpp-motion-control/build/arm_motion_control/CTestConfiguration.ini
+[0.034s] Parse Config file:/path/to/ros2-cpp-motion-control/build/arm_motion_control/CTestConfiguration.ini
+[0.034s] SetCMakeVariable:CTEST_SITE:kira
+[0.034s] SetCMakeVariable:CTEST_SOURCE_DIRECTORY:/path/to/ros2-cpp-motion-control
+[0.035s] SetCMakeVariable:CTEST_BINARY_DIRECTORY:/path/to/ros2-cpp-motion-control/build/arm_motion_control
+[0.035s] SetCMakeVariable:CTEST_CONFIGURE_COMMAND:"/path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/cmake" "/path/to/ros2-cpp-motion-control"
+[0.035s] SetCMakeVariable:CTEST_TEST_TIMEOUT:10000000
+[0.035s] UpdateCTestConfiguration  from :/path/to/ros2-cpp-motion-control/build/arm_motion_control/CTestConfiguration.ini
+[0.035s] Parse Config file:/path/to/ros2-cpp-motion-control/build/arm_motion_control/CTestConfiguration.ini
+[0.035s] SetCMakeVariable:CTEST_SITE:kira
+[0.035s] SetCMakeVariable:CTEST_SOURCE_DIRECTORY:/path/to/ros2-cpp-motion-control
+[0.035s] SetCMakeVariable:CTEST_BINARY_DIRECTORY:/path/to/ros2-cpp-motion-control/build/arm_motion_control
+[0.035s] SetCMakeVariable:CTEST_CONFIGURE_COMMAND:"/path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/cmake" "/path/to/ros2-cpp-motion-control"
+[0.036s] SetCTestConfiguration:BuildDirectory:/path/to/ros2-cpp-motion-control/build/arm_motion_control
+[0.036s] SetCTestConfiguration:SourceDirectory:/path/to/ros2-cpp-motion-control
+[0.036s] Test project /path/to/ros2-cpp-motion-control/build/arm_motion_control
+[0.036s] Constructing a list of tests
+[0.036s] Done constructing a list of tests
+[0.036s] Updating test list for fixtures
+[0.036s] Added 0 tests to meet fixture requirements
+[0.037s] Checking test dependency graph...
+[0.037s] Checking test dependency graph end
+[0.037s] test 1
+[0.037s]     Start 1: test_trajectory
+[0.037s] 
+[0.037s] 1: Test command: /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/python3 "-u" "/path/to/ros2-cpp-motion-control/.pixi/envs/default/share/ament_cmake_test/cmake/run_test.py" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml" "--package-name" "arm_motion_control" "--output-file" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/ament_cmake_gtest/test_trajectory.txt" "--command" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_trajectory" "--gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml"
+[0.037s] 1: Working Directory: /path/to/ros2-cpp-motion-control/build/arm_motion_control
+[0.037s] 1: Test timeout computed to be: 60
+[0.127s] 1: -- run_test.py: invoking following command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control':
+[0.127s] 1:  - /path/to/ros2-cpp-motion-control/build/arm_motion_control/test_trajectory --gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml
+[0.129s] 1: Running main() from /home/conda/feedstock_root/build_artifacts/bld/rattler-build_gtest_1786419392/work/googletest/src/gtest_main.cc
+[0.129s] 1: [==========] Running 8 tests from 3 test suites.
+[0.129s] 1: [----------] Global test environment set-up.
+[0.130s] 1: [----------] 1 test from Quintic
+[0.130s] 1: [ RUN      ] Quintic.EndpointsMatchPosVelAcc
+[0.130s] 1: [       OK ] Quintic.EndpointsMatchPosVelAcc (0 ms)
+[0.130s] 1: [----------] 1 test from Quintic (0 ms total)
+[0.130s] 1: 
+[0.130s] 1: [----------] 6 tests from Trajectory
+[0.130s] 1: [ RUN      ] Trajectory.RestToRestEndpointsAndSmooth
+[0.130s] 1: [       OK ] Trajectory.RestToRestEndpointsAndSmooth (0 ms)
+[0.130s] 1: [ RUN      ] Trajectory.MultiWaypointPassesThroughPoints
+[0.131s] 1: [       OK ] Trajectory.MultiWaypointPassesThroughPoints (0 ms)
+[0.131s] 1: [ RUN      ] Trajectory.RejectsPositionOverLimit
+[0.131s] 1: [       OK ] Trajectory.RejectsPositionOverLimit (0 ms)
+[0.131s] 1: [ RUN      ] Trajectory.RejectsVelocityOverLimit
+[0.131s] 1: [       OK ] Trajectory.RejectsVelocityOverLimit (0 ms)
+[0.131s] 1: [ RUN      ] Trajectory.RejectsNaNAndInf
+[0.131s] 1: [       OK ] Trajectory.RejectsNaNAndInf (0 ms)
+[0.131s] 1: [ RUN      ] Trajectory.RejectsBadTimingAndShape
+[0.131s] 1: [       OK ] Trajectory.RejectsBadTimingAndShape (0 ms)
+[0.131s] 1: [----------] 6 tests from Trajectory (0 ms total)
+[0.131s] 1: 
+[0.131s] 1: [----------] 1 test from Controller
+[0.131s] 1: [ RUN      ] Controller.RejectedGoalKeepsHolding
+[0.131s] 1: [       OK ] Controller.RejectedGoalKeepsHolding (0 ms)
+[0.131s] 1: [----------] 1 test from Controller (0 ms total)
+[0.131s] 1: 
+[0.132s] 1: [----------] Global test environment tear-down
+[0.132s] 1: [==========] 8 tests from 3 test suites ran. (0 ms total)
+[0.132s] 1: [  PASSED  ] 8 tests.
+[0.132s] 1: -- run_test.py: return code 0
+[0.132s] 1: -- run_test.py: inject classname prefix into gtest result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml'
+[0.132s] 1: -- run_test.py: verify result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_trajectory.gtest.xml'
+[0.152s] 1/4 Test #1: test_trajectory ..................   Passed    0.12 sec
+[0.152s] test 2
+[0.152s]     Start 2: test_watchdog
+[0.152s] 
+[0.152s] 2: Test command: /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/python3 "-u" "/path/to/ros2-cpp-motion-control/.pixi/envs/default/share/ament_cmake_test/cmake/run_test.py" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml" "--package-name" "arm_motion_control" "--output-file" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/ament_cmake_gtest/test_watchdog.txt" "--command" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_watchdog" "--gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml"
+[0.152s] 2: Working Directory: /path/to/ros2-cpp-motion-control/build/arm_motion_control
+[0.152s] 2: Test timeout computed to be: 60
+[0.251s] 2: -- run_test.py: invoking following command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control':
+[0.251s] 2:  - /path/to/ros2-cpp-motion-control/build/arm_motion_control/test_watchdog --gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml
+[0.253s] 2: Running main() from /home/conda/feedstock_root/build_artifacts/bld/rattler-build_gtest_1786419392/work/googletest/src/gtest_main.cc
+[0.254s] 2: [==========] Running 5 tests from 2 test suites.
+[0.254s] 2: [----------] Global test environment set-up.
+[0.254s] 2: [----------] 2 tests from Watchdog
+[0.254s] 2: [ RUN      ] Watchdog.TripsOnlyAfterTimeout
+[0.254s] 2: [       OK ] Watchdog.TripsOnlyAfterTimeout (0 ms)
+[0.254s] 2: [ RUN      ] Watchdog.ZeroTimeoutDisables
+[0.254s] 2: [       OK ] Watchdog.ZeroTimeoutDisables (0 ms)
+[0.254s] 2: [----------] 2 tests from Watchdog (0 ms total)
+[0.254s] 2: 
+[0.254s] 2: [----------] 3 tests from Controller
+[0.254s] 2: [ RUN      ] Controller.WatchdogHoldsMeasuredPositionWhenCommandsStop
+[0.255s] 2: [       OK ] Controller.WatchdogHoldsMeasuredPositionWhenCommandsStop (0 ms)
+[0.255s] 2: [ RUN      ] Controller.RefreshedCommandsKeepTracking
+[0.255s] 2: [       OK ] Controller.RefreshedCommandsKeepTracking (0 ms)
+[0.255s] 2: [ RUN      ] Controller.FinishedTrajectoryHoldsGoalWithoutWatchdog
+[0.255s] 2: [       OK ] Controller.FinishedTrajectoryHoldsGoalWithoutWatchdog (0 ms)
+[0.255s] 2: [----------] 3 tests from Controller (0 ms total)
+[0.255s] 2: 
+[0.255s] 2: [----------] Global test environment tear-down
+[0.255s] 2: [==========] 5 tests from 2 test suites ran. (0 ms total)
+[0.255s] 2: [  PASSED  ] 5 tests.
+[0.255s] 2: -- run_test.py: return code 0
+[0.255s] 2: -- run_test.py: inject classname prefix into gtest result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml'
+[0.261s] 2: -- run_test.py: verify result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_watchdog.gtest.xml'
+[0.278s] 2/4 Test #2: test_watchdog ....................   Passed    0.13 sec
+[0.278s] test 3
+[0.278s]     Start 3: test_fault_injection
+[0.278s] 
+[0.278s] 3: Test command: /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/python3 "-u" "/path/to/ros2-cpp-motion-control/.pixi/envs/default/share/ament_cmake_test/cmake/run_test.py" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml" "--package-name" "arm_motion_control" "--output-file" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/ament_cmake_gtest/test_fault_injection.txt" "--command" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_fault_injection" "--gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml"
+[0.278s] 3: Working Directory: /path/to/ros2-cpp-motion-control/build/arm_motion_control
+[0.278s] 3: Test timeout computed to be: 120
+[0.368s] 3: -- run_test.py: invoking following command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control':
+[0.368s] 3:  - /path/to/ros2-cpp-motion-control/build/arm_motion_control/test_fault_injection --gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml
+[0.371s] 3: [==========] Running 6 tests from 1 test suite.
+[0.371s] 3: [----------] Global test environment set-up.
+[0.371s] 3: [----------] 6 tests from FaultInjection
+[0.371s] 3: [ RUN      ] FaultInjection.BaselineStreaming
+[0.730s] 3: [       OK ] FaultInjection.BaselineStreaming (358 ms)
+[0.730s] 3: [ RUN      ] FaultInjection.DroppedMessages30Percent
+[0.901s] 3: [       OK ] FaultInjection.DroppedMessages30Percent (171 ms)
+[0.901s] 3: [ RUN      ] FaultInjection.CommandsStopMidMotion
+[1.042s] 3: [       OK ] FaultInjection.CommandsStopMidMotion (140 ms)
+[1.042s] 3: [ RUN      ] FaultInjection.LateMessages300ms
+[1.181s] 3: [       OK ] FaultInjection.LateMessages300ms (139 ms)
+[1.182s] 3: [ RUN      ] FaultInjection.StaleMessageOlderThanTrajectory
+[1.314s] 3: /path/to/ros2-cpp-motion-control/test/test_fault_injection.cpp:163: Failure
+[1.314s] 3: Expected: (s.max_ref_jump) < (2.61 * 0.001 * 1.01), actual: 0.0032338407547671116 vs 0.0026360999999999997
+[1.314s] 3: 
+[1.314s] 3: [  FAILED  ] FaultInjection.StaleMessageOlderThanTrajectory (132 ms)
+[1.314s] 3: [ RUN      ] FaultInjection.OverLimitAndNaNGoalsMidMotion
+[1.454s] 3: [       OK ] FaultInjection.OverLimitAndNaNGoalsMidMotion (140 ms)
+[1.455s] 3: [----------] 6 tests from FaultInjection (1083 ms total)
+[1.455s] 3: 
+[1.455s] 3: [----------] Global test environment tear-down
+[1.455s] 3: [==========] 6 tests from 1 test suite ran. (1083 ms total)
+[1.455s] 3: [  PASSED  ] 5 tests.
+[1.455s] 3: [  FAILED  ] 1 test, listed below:
+[1.455s] 3: [  FAILED  ] FaultInjection.StaleMessageOlderThanTrajectory
+[1.455s] 3: 
+[1.456s] 3:  1 FAILED TEST
+[1.493s] 3: -- run_test.py: return code 1
+[1.493s] 3: -- run_test.py: inject classname prefix into gtest result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml'
+[1.493s] 3: -- run_test.py: verify result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_fault_injection.gtest.xml'
+[1.521s] 3/4 Test #3: test_fault_injection .............***Failed    1.24 sec
+[1.521s] test 4
+[1.521s]     Start 4: test_integration
+[1.521s] 
+[1.522s] 4: Test command: /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/python3 "-u" "/path/to/ros2-cpp-motion-control/.pixi/envs/default/share/ament_cmake_test/cmake/run_test.py" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml" "--package-name" "arm_motion_control" "--output-file" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/ament_cmake_gtest/test_integration.txt" "--command" "/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_integration" "--gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml"
+[1.522s] 4: Working Directory: /path/to/ros2-cpp-motion-control/build/arm_motion_control
+[1.522s] 4: Test timeout computed to be: 120
+[1.637s] 4: -- run_test.py: invoking following command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control':
+[1.637s] 4:  - /path/to/ros2-cpp-motion-control/build/arm_motion_control/test_integration --gtest_output=xml:/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml
+[1.732s] 4: [==========] Running 3 tests from 1 test suite.
+[1.732s] 4: [----------] Global test environment set-up.
+[1.732s] 4: [----------] 3 tests from Integration
+[1.732s] 4: [ RUN      ] Integration.GoalReachedWithLowTrackingError
+[1.939s] 4: [INFO] [1794251132.929403296] [motion_control]: MuJoCo model /path/to/ros2-cpp-motion-control/assets/franka_emika_panda/panda_nohand.xml, 7 joints, dt=0.0010 s, cmd_timeout=0.500 s
+[5.088s] 4: [       OK ] Integration.GoalReachedWithLowTrackingError (3355 ms)
+[5.088s] 4: [ RUN      ] Integration.WatchdogHoldsWhenCommandsStop
+[5.172s] 4: [INFO] [1794251136.162119226] [motion_control]: MuJoCo model /path/to/ros2-cpp-motion-control/assets/franka_emika_panda/panda_nohand.xml, 7 joints, dt=0.0010 s, cmd_timeout=0.300 s
+[7.310s] 4: [       OK ] Integration.WatchdogHoldsWhenCommandsStop (2221 ms)
+[7.310s] 4: [ RUN      ] Integration.BadGoalRejectedOverRos
+[7.373s] 4: [INFO] [1794251138.363271516] [motion_control]: MuJoCo model /path/to/ros2-cpp-motion-control/assets/franka_emika_panda/panda_nohand.xml, 7 joints, dt=0.0010 s, cmd_timeout=0.500 s
+[7.396s] 4: [WARN] [1794251138.386813483] [motion_control]: goal rejected: point 0: position is NaN/Inf
+[7.396s] 4: [WARN] [1794251138.386882116] [motion_control]: goal rejected: point 0: joint 1 position 2.500000 outside [-1.762800, 1.762800]
+[7.901s] 4: [       OK ] Integration.BadGoalRejectedOverRos (591 ms)
+[7.901s] 4: [----------] 3 tests from Integration (6168 ms total)
+[7.901s] 4: 
+[7.901s] 4: [----------] Global test environment tear-down
+[7.901s] 4: [==========] 3 tests from 1 test suite ran. (6168 ms total)
+[7.901s] 4: [  PASSED  ] 3 tests.
+[8.073s] 4: -- run_test.py: return code 0
+[8.073s] 4: -- run_test.py: inject classname prefix into gtest result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml'
+[8.073s] 4: -- run_test.py: verify result file '/path/to/ros2-cpp-motion-control/build/arm_motion_control/test_results/arm_motion_control/test_integration.gtest.xml'
+[8.100s] 4/4 Test #4: test_integration .................   Passed    6.57 sec
+[8.100s] 
+[8.100s] 75% tests passed, 1 tests failed out of 4
+[8.100s] 
+[8.100s] Label Time Summary:
+[8.100s] gtest    =   8.06 sec*proc (4 tests)
+[8.100s] 
+[8.100s] Total Test time (real) =   8.06 sec
+[8.100s] 
+[8.100s] The following tests FAILED:
+[8.101s] 	  3 - test_fault_injection (Failed)                     gtest
+[8.110s] Invoked command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control' returned '8': AMENT_PREFIX_PATH=/path/to/ros2-cpp-motion-control/install/arm_motion_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/path/to/ros2-cpp-motion-control/install/arm_motion_control DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PIXI_PROMPT=(ros2-cpp-motion-control) /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

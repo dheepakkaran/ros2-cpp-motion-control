@@ -1,0 +1,46 @@
+[-1794251210419151616.000s] colcon DEBUG Command line arguments: ['/path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/colcon', 'test']
+[-1794251210419151616.000s] colcon DEBUG Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='test', build_base='build', install_base='install', merge_install=False, test_result_base=None, retest_until_fail=0, retest_until_pass=0, abort_on_error=False, return_code_on_test_failure=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, ctest_args=None, python_testing=None, pytest_args=None, pytest_with_coverage=False, unittest_args=None, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x77a64b70fe50>, verb_extension=<colcon_core.verb.test.TestVerb object at 0x77a64b4e8d70>, main=<bound method TestVerb.main of <colcon_core.verb.test.TestVerb object at 0x77a64b4e8d70>>)
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(colcon_meta) check parameters
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) check parameters
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) check parameters
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) check parameters
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(colcon_meta) discover
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) discover
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery INFO Crawling recursively for packages in '/path/to/ros2-cpp-motion-control'
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'ignore'
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'ignore_ament_install'
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['colcon_pkg']
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'colcon_pkg'
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['colcon_meta']
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'colcon_meta'
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extensions ['ros']
+[-1794251210419151616.000s] colcon.colcon_core.package_identification Level 1 _identify(.) by extension 'ros'
+[-1794251210419151616.000s] colcon.colcon_core.package_identification DEBUG Package '.' with type 'ros.ament_cmake' and name 'arm_motion_control'
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(recursive) using defaults
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) discover
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(ignore) using defaults
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) discover
+[-1794251210419151616.000s] colcon.colcon_core.package_discovery Level 1 discover_packages(path) using defaults
+[-1794251210419151616.000s] colcon.colcon_core.verb Level 5 set package 'arm_motion_control' test argument 'ctest_args' from command line to 'None'
+[-1794251210419151616.000s] colcon.colcon_core.verb Level 5 set package 'arm_motion_control' test argument 'python_testing' from command line to 'None'
+[-1794251210419151616.000s] colcon.colcon_core.verb Level 5 set package 'arm_motion_control' test argument 'pytest_args' from command line to 'None'
+[-1794251210419151616.000s] colcon.colcon_core.verb Level 5 set package 'arm_motion_control' test argument 'pytest_with_coverage' from command line to 'False'
+[-1794251210419151616.000s] colcon.colcon_core.verb Level 5 set package 'arm_motion_control' test argument 'unittest_args' from command line to 'None'
+[-1794251210419151616.000s] colcon.colcon_core.verb Level 5 set package 'arm_motion_control' test argument 'retest_until_pass' from command line to '0'
+[-1794251210419151616.000s] colcon.colcon_core.verb Level 5 set package 'arm_motion_control' test argument 'retest_until_fail' from command line to '0'
+[-1794251210419151616.000s] colcon.colcon_core.verb.test DEBUG Testing package 'arm_motion_control' with the following arguments: {'build_base': '/path/to/ros2-cpp-motion-control/build/arm_motion_control', 'ctest_args': None, 'install_base': '/path/to/ros2-cpp-motion-control/install/arm_motion_control', 'path': '/path/to/ros2-cpp-motion-control', 'pytest_args': None, 'pytest_with_coverage': False, 'python_testing': None, 'retest_until_fail': 0, 'retest_until_pass': 0, 'test_result_base': None, 'unittest_args': None}
+[-1794251210419151616.000s] colcon.colcon_core.executor INFO Executing jobs using 'parallel' executor
+[-1794251210419151616.000s] colcon.colcon_parallel_executor.executor.parallel DEBUG run_until_complete
+[-1794251210419151616.000s] colcon.colcon_ros.task.ament_cmake.test INFO Testing ROS package in '/path/to/ros2-cpp-motion-control' with build type 'ament_cmake'
+[-1794251210419151616.000s] colcon.colcon_cmake.task.cmake.test INFO Testing CMake package in '/path/to/ros2-cpp-motion-control'
+[-1794251210419151616.000s] colcon.colcon_core.plugin_system INFO Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[-1794251210419151616.000s] colcon.colcon_core.shell INFO Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[-1794251210419151616.000s] colcon.colcon_core.shell DEBUG Skip shell extension 'dsv' for command environment
+[-1794251210419151616.000s] colcon.colcon_core.event_handler.log_command DEBUG Invoking command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control': AMENT_PREFIX_PATH=/path/to/ros2-cpp-motion-control/install/arm_motion_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/path/to/ros2-cpp-motion-control/install/arm_motion_control DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PIXI_PROMPT=(ros2-cpp-motion-control) /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[-1794251210419151616.000s] colcon.colcon_parallel_executor.executor.parallel DEBUG closing loop
+[-1794251210419151616.000s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in '/path/to/ros2-cpp-motion-control/build/arm_motion_control' returned '0': AMENT_PREFIX_PATH=/path/to/ros2-cpp-motion-control/install/arm_motion_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/path/to/ros2-cpp-motion-control/install/arm_motion_control DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PIXI_PROMPT=(ros2-cpp-motion-control) /path/to/ros2-cpp-motion-control/.pixi/envs/default/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[-1794251210419151616.000s] colcon.colcon_parallel_executor.executor.parallel DEBUG loop closed
+[-1794251210419151616.000s] colcon.colcon_parallel_executor.executor.parallel DEBUG run_until_complete finished with '0'
+[-1794251210419151616.000s] colcon.colcon_core.event_reactor DEBUG joining thread
+[-1794251210419151616.000s] colcon.colcon_core.event_reactor DEBUG joined thread
