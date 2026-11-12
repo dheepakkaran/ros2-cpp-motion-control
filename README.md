@@ -16,6 +16,10 @@ a command watchdog, and fault-injection tests that found two real bugs, each wit
 ![tests](https://img.shields.io/badge/colcon%20test-26%20passing-22c55e)
 ![pixi](https://img.shields.io/badge/env-pixi%20%2B%20RoboStack-FFC107)
 
+<a href="https://dheepakkaran.github.io/ros2-cpp-motion-control/#overview"><img src="docs/media/overview.webp" alt="35-second overview: the arm plans a smooth path, follows it 1,000 times a second, holds still when orders stop, and tests that tried to break it found 2 real bugs" width="100%"></a>
+
+<sub>35-second overview (silent preview). <a href="https://dheepakkaran.github.io/ros2-cpp-motion-control/#overview">Watch it with sound on the project page →</a></sub>
+
 </div>
 
 > **Simulation only.** No real robot or hardware is involved, and nothing is deployed. Independent learning project.
